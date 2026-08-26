@@ -1,0 +1,821 @@
+/* ==========================================
+   VARIÁVEIS
+========================================== */
+
+:root {
+    --accent: #4CC9F0;
+    --accent-glow: rgba(76, 201, 240, 0.18);
+}
+
+
+/* ==========================================
+   CONFIGURAÇÕES GERAIS
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #080808;
+    color: white;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 7%;
+
+    background: rgba(8, 8, 8, 0.95);
+    border-bottom: 1px solid #242424;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.menu ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.menu a {
+    font-size: 13px;
+    color: #ddd;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: var(--accent);
+}
+
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero {
+    min-height: 90vh;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+
+    padding: 80px 10%;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.tag {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 68px);
+    line-height: 1.15;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.hero p {
+    color: #bbb;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.botao {
+    display: inline-block;
+
+    background: var(--accent);
+    color: #111;
+
+    padding: 13px 25px;
+    border-radius: 30px;
+
+    font-weight: 600;
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.botao:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px var(--accent-glow);
+}
+
+
+/* MOCKUP — moldura tipo "viewfinder" de câmera */
+
+.hero-card {
+    display: flex;
+    justify-content: center;
+}
+
+.phone-mockup {
+    position: relative;
+    width: 280px;
+    padding: 26px;
+
+    background: #111;
+    border: 4px solid #292929;
+    border-radius: 40px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+
+    transition: transform 0.3s;
+}
+
+.phone-mockup:hover {
+    transform: scale(1.03);
+}
+
+.phone-mockup::before,
+.phone-mockup::after {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--accent);
+}
+
+.phone-mockup::before {
+    top: 6px;
+    left: 6px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.phone-mockup::after {
+    bottom: 6px;
+    right: 6px;
+    border-left: none;
+    border-top: none;
+}
+
+.phone-mockup img {
+    width: 100%;
+    border-radius: 30px;
+}
+
+
+/* ==========================================
+   SEÇÕES
+========================================== */
+
+.secao {
+    padding: 100px 10%;
+}
+
+.titulo-secao {
+    margin-bottom: 50px;
+}
+
+.titulo-secao span {
+    color: var(--accent);
+    font-size: 14px;
+}
+
+.titulo-secao h2 {
+    font-size: 42px;
+    margin-top: 5px;
+}
+
+
+/* ==========================================
+   SOLUÇÃO
+========================================== */
+
+.grid-solucao {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.texto-solucao,
+.solucao-destaque {
+    padding: 35px;
+    border-radius: 25px;
+    background: #151515;
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.texto-solucao:hover,
+.solucao-destaque:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px var(--accent-glow);
+}
+
+.texto-solucao h3,
+.solucao-destaque h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.texto-solucao p {
+    color: #bbb;
+    margin-bottom: 20px;
+}
+
+.texto-solucao ul {
+    padding-left: 20px;
+    color: #ddd;
+}
+
+.texto-solucao li {
+    margin-bottom: 6px;
+}
+
+.solucao-destaque {
+    border: 1px solid var(--accent);
+}
+
+.solucao-destaque .icone {
+    font-size: 35px;
+    color: var(--accent);
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.solucao-destaque p {
+    color: #bbb;
+}
+
+
+/* ==========================================
+   COMO FUNCIONA
+========================================== */
+
+.funcionamento {
+    background: #101010;
+}
+
+.grid-etapas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.etapa {
+    background: #181818;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.etapa:hover {
+    transform: translateY(-6px) scale(1.03);
+    border-color: var(--accent);
+    box-shadow: 0 16px 40px var(--accent-glow);
+}
+
+.numero {
+    color: var(--accent);
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.etapa h3 {
+    margin: 15px 0 10px;
+}
+
+.etapa p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   PÚBLICO
+========================================== */
+
+.grid-publico {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.grid-publico article {
+    background: #151515;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.grid-publico article:hover {
+    transform: translateY(-6px) scale(1.03);
+    border-color: var(--accent);
+    box-shadow: 0 16px 40px var(--accent-glow);
+}
+
+.grid-publico h3 {
+    margin-bottom: 12px;
+}
+
+.grid-publico p {
+    color: #aaa;
+}
+
+
+/* ==========================================
+   BENEFÍCIOS
+========================================== */
+
+.grid-beneficios {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.grid-beneficios article {
+    border: 1px solid #292929;
+    padding: 25px;
+    border-radius: 20px;
+
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.grid-beneficios article:hover {
+    transform: translateY(-6px) scale(1.03);
+    border-color: var(--accent);
+    box-shadow: 0 16px 40px var(--accent-glow);
+}
+
+.grid-beneficios strong {
+    color: var(--accent);
+    font-size: 22px;
+}
+
+.grid-beneficios h3 {
+    margin: 15px 0;
+}
+
+.grid-beneficios p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   GALERIA
+========================================== */
+
+.galeria {
+    background: #101010;
+}
+
+.intro-galeria {
+    color: #aaa;
+    margin-top: -30px;
+    margin-bottom: 40px;
+}
+
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.grid-galeria figure {
+    background: #181818;
+    padding: 12px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid transparent;
+
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.grid-galeria figure:hover {
+    transform: translateY(-6px) scale(1.03);
+    border-color: var(--accent);
+    box-shadow: 0 16px 40px var(--accent-glow);
+}
+
+.grid-galeria img {
+    width: 100%;
+    height: 420px;
+    object-fit: contain;
+    background: #050505;
+    border-radius: 14px;
+
+    transition: transform 0.4s;
+}
+
+.grid-galeria figure:hover img {
+    transform: scale(1.06);
+}
+
+.grid-galeria figcaption {
+    padding: 15px 5px 5px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+
+/* ==========================================
+   VÍDEO
+========================================== */
+
+.video-area {
+    margin-top: 70px;
+    text-align: center;
+}
+
+.video-area h3 {
+    margin-bottom: 25px;
+    font-size: 25px;
+}
+
+.video-area video {
+    width: min(800px, 100%);
+    height: 500px;
+    border-radius: 20px;
+    background: #000;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.08);
+}
+
+
+/* ==========================================
+   EQUIPE
+========================================== */
+
+.grid-equipe {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.membro {
+    text-align: center;
+    padding: 25px 15px;
+    background: #151515;
+    border-radius: 20px;
+    border: 1px solid transparent;
+
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.membro:hover {
+    transform: translateY(-6px) scale(1.03);
+    border-color: var(--accent);
+    box-shadow: 0 16px 40px var(--accent-glow);
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 15px;
+
+    background: var(--accent);
+    color: #111;
+
+    border-radius: 50%;
+
+    font-weight: 700;
+}
+
+.membro h3 {
+    font-size: 16px;
+}
+
+.membro span {
+    color: var(--accent);
+    font-size: 12px;
+}
+
+.membro p {
+    margin-top: 10px;
+    color: #999;
+    font-size: 12px;
+}
+
+
+/* ==========================================
+   CONTATO
+========================================== */
+
+.contato {
+    background: #101010;
+}
+
+.grid-contato {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.grid-contato h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.grid-contato p {
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+form label {
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+
+    background: #191919;
+    border: 1px solid #333;
+
+    border-radius: 12px;
+
+    padding: 12px;
+
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+
+    transition: border-color 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: var(--accent);
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button {
+    margin-top: 12px;
+
+    border: none;
+    border-radius: 25px;
+
+    padding: 13px;
+
+    background: var(--accent);
+    color: #111;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px var(--accent-glow);
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.footer {
+    text-align: center;
+    padding: 50px 20px;
+    background: #050505;
+}
+
+.footer p {
+    color: #777;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE — TABLET (até 1024px)
+========================================== */
+
+@media (max-width: 1024px) {
+
+    .menu ul {
+        gap: 14px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text {
+        margin: auto;
+    }
+
+    .hero-card {
+        order: -1;
+    }
+
+    .grid-solucao {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-etapas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-publico {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-beneficios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-equipe {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-contato {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE — MOBILE (até 700px)
+========================================== */
+
+@media (max-width: 700px) {
+
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .menu ul {
+        justify-content: flex-start;
+        padding-bottom: 5px;
+    }
+
+    .menu a {
+        white-space: nowrap;
+    }
+
+    .hero {
+        padding: 60px 7%;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .secao {
+        padding: 70px 7%;
+    }
+
+    .titulo-secao h2 {
+        font-size: 30px;
+    }
+
+    .grid-etapas,
+    .grid-beneficios,
+    .grid-publico {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-galeria img {
+        height: 380px;
+    }
+
+    .grid-equipe {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE — MOBILE PEQUENO (até 450px)
+========================================== */
+
+@media (max-width: 450px) {
+
+    .grid-equipe {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .phone-mockup {
+        width: 220px;
+    }
+
+    .grid-galeria img {
+        height: 300px;
+    }
+
+}
+
+
+/* ==========================================
+   MOVIMENTO REDUZIDO
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+
+}
