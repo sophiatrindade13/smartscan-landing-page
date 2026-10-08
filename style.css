@@ -89,7 +89,7 @@ textarea:focus-visible {
 }
 
 .tag {
-    color: var(--accent);
+    color: #ddd;
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 2px;
@@ -116,9 +116,9 @@ textarea:focus-visible {
     background: var(--accent);
     color: #111;
     padding: 13px 25px;
-    border-radius: 30px;
+    border-radius: 28px;
     font-weight: 600;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: 0.3s;
 }
 
 .botao:hover {
@@ -135,25 +135,17 @@ textarea:focus-visible {
 .phone-mockup {
     position: relative;
     width: 280px;
-    padding: 26px;
+    padding: 10px;
     background: #111;
     border: 4px solid #292929;
-    border-radius: 40px;
+    border-radius: 37px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
     transition: transform 0.3s;
+    
 }
 
 .phone-mockup:hover {
     transform: scale(1.03);
-}
-
-.phone-mockup::before,
-.phone-mockup::after {
-    content: "";
-    position: absolute;
-    width: 22px;
-    height: 22px;
-    border: 2px solid var(--accent);
 }
 
 .phone-mockup::before {
@@ -172,7 +164,7 @@ textarea:focus-visible {
 
 .phone-mockup img {
     width: 100%;
-    border-radius: 30px;
+    border-radius: 28px;
 }
 
 
@@ -206,7 +198,7 @@ textarea:focus-visible {
     padding: 35px;
     border-radius: 25px;
     background: #151515;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: 0.3s;
 }
 
 .texto-solucao:hover,
@@ -264,19 +256,19 @@ textarea:focus-visible {
 .etapa {
     background: #181818;
     padding: 30px;
-    border-radius: 20px;
+    border-radius: 16px;
     border: 1px solid transparent;
-    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    transition: 0.3s, box-shadow 0.3s;
 }
 
 .etapa:hover {
-    transform: translateY(-6px) scale(1.03);
+    transform: translateY(-4px);
     border-color: var(--accent);
     box-shadow: 0 16px 40px var(--accent-glow);
 }
 
 .numero {
-    color: var(--accent);
+    color: #ddd;
     font-size: 25px;
     font-weight: 600;
 }
@@ -300,13 +292,13 @@ textarea:focus-visible {
 .grid-publico article {
     background: #151515;
     padding: 30px;
-    border-radius: 20px;
+    border-radius: 16px;
     border: 1px solid transparent;
-    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    transition: 0.3s, box-shadow 0.3s;
 }
 
 .grid-publico article:hover {
-    transform: translateY(-6px) scale(1.03);
+    transform: translateY(-4px);
     border-color: var(--accent);
     box-shadow: 0 16px 40px var(--accent-glow);
 }
@@ -329,8 +321,8 @@ textarea:focus-visible {
 .grid-beneficios article {
     border: 1px solid #292929;
     padding: 25px;
-    border-radius: 20px;
-    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    border-radius: 16px;
+    transition: 0.3s;
 }
 
 .grid-beneficios article:hover {
@@ -373,14 +365,14 @@ textarea:focus-visible {
 .grid-galeria figure {
     background: #181818;
     padding: 12px;
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
     border: 1px solid transparent;
-    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    transition: 0.3s;
 }
 
 .grid-galeria figure:hover {
-    transform: translateY(-6px) scale(1.03);
+    transform: translateY(-4px);
     border-color: var(--accent);
     box-shadow: 0 16px 40px var(--accent-glow);
 }
@@ -395,7 +387,7 @@ textarea:focus-visible {
 }
 
 .grid-galeria figure:hover img {
-    transform: scale(1.06);
+    transform: scale(1.02);
 }
 
 .grid-galeria figcaption {
@@ -418,7 +410,7 @@ textarea:focus-visible {
 .video-area video {
     width: min(800px, 100%);
     height: 500px;
-    border-radius: 20px;
+    border-radius: 16px;
     background: #000;
     object-fit: cover;
     object-position: center;
@@ -436,9 +428,9 @@ textarea:focus-visible {
     text-align: center;
     padding: 25px 15px;
     background: #151515;
-    border-radius: 20px;
+    border-radius: 16px;
     border: 1px solid transparent;
-    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    transition: 0.3s;
 }
 
 .membro:hover {
@@ -465,7 +457,7 @@ textarea:focus-visible {
 }
 
 .membro span {
-    color: var(--accent);
+    color: #ddd;
     font-size: 12px;
 }
 
@@ -516,7 +508,7 @@ form textarea {
     padding: 12px;
     color: white;
     font-family: 'Poppins', sans-serif;
-    transition: border-color 0.3s;
+    transition: 0.3s;
 }
 
 form input:focus,
@@ -538,7 +530,7 @@ form button {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: 0.3s;
 }
 
 form button:hover {
@@ -698,14 +690,3 @@ form button:hover {
 }
 
 
-@media (prefers-reduced-motion: reduce) {
-
-    html {
-        scroll-behavior: auto;
-    }
-
-    * {
-        transition: none !important;
-    }
-
-}
